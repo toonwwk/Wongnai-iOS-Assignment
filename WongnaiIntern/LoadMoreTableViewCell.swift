@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DummyTableViewCell: UITableViewCell {
+class LoadMoreTableViewCell: UITableViewCell {
 
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
@@ -16,4 +16,7 @@ class DummyTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    func configureCell() {
+        activityIndicatorView.startAnimating()
+    }
 }

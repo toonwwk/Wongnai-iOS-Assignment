@@ -3,21 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3AA8903079097534906A8A6C /* Pods_WongnaiIntern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640EEB685D18CEFBCF13DE71 /* Pods_WongnaiIntern.framework */; };
 		C8636B2E252F993D006372E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B2D252F993D006372E0 /* AppDelegate.swift */; };
 		C8636B30252F993D006372E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B2F252F993D006372E0 /* SceneDelegate.swift */; };
-		C8636B32252F993D006372E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B31252F993D006372E0 /* ViewController.swift */; };
+		C8636B32252F993D006372E0 /* PopularPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B31252F993D006372E0 /* PopularPhotoViewController.swift */; };
 		C8636B35252F993D006372E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8636B33252F993D006372E0 /* Main.storyboard */; };
 		C8636B37252F993E006372E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8636B36252F993E006372E0 /* Assets.xcassets */; };
 		C8636B3A252F993E006372E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8636B38252F993E006372E0 /* LaunchScreen.storyboard */; };
-		C8636B44252F9AFC006372E0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B42252F9AFC006372E0 /* TableViewCell.swift */; };
-		C8636B45252F9AFC006372E0 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8636B43252F9AFC006372E0 /* TableViewCell.xib */; };
-		C8636B48252FA5B1006372E0 /* DummyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B46252FA5B1006372E0 /* DummyTableViewCell.swift */; };
-		C8636B49252FA5B1006372E0 /* DummyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8636B47252FA5B1006372E0 /* DummyTableViewCell.xib */; };
+		C8636B44252F9AFC006372E0 /* PopularPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B42252F9AFC006372E0 /* PopularPhotoTableViewCell.swift */; };
+		C8636B45252F9AFC006372E0 /* PopularPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8636B43252F9AFC006372E0 /* PopularPhotoTableViewCell.xib */; };
+		C8636B48252FA5B1006372E0 /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B46252FA5B1006372E0 /* LoadMoreTableViewCell.swift */; };
+		C8636B49252FA5B1006372E0 /* LoadMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8636B47252FA5B1006372E0 /* LoadMoreTableViewCell.xib */; };
+		C8E044262530BC460062C7C1 /* PopularPhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E044252530BC460062C7C1 /* PopularPhotoService.swift */; };
+		C8E044292530CD400062C7C1 /* PopularPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E044282530CD400062C7C1 /* PopularPhotoResponse.swift */; };
+		C8E044302530D0640062C7C1 /* Photoo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0442F2530D0640062C7C1 /* Photoo.swift */; };
+		C8E044342530D3E60062C7C1 /* PopularPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E044332530D3E60062C7C1 /* PopularPhotoViewModel.swift */; };
+		C8E0443E2530E2A50062C7C1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0443D2530E2A50062C7C1 /* R.generated.swift */; };
+		C8E044452530EAA70062C7C1 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E044442530EAA70062C7C1 /* PhotoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,15 +33,21 @@
 		C8636B2A252F993D006372E0 /* WongnaiIntern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WongnaiIntern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8636B2D252F993D006372E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8636B2F252F993D006372E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C8636B31252F993D006372E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C8636B31252F993D006372E0 /* PopularPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotoViewController.swift; sourceTree = "<group>"; };
 		C8636B34252F993D006372E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8636B36252F993E006372E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8636B39252F993E006372E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8636B3B252F993E006372E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8636B42252F9AFC006372E0 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		C8636B43252F9AFC006372E0 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		C8636B46252FA5B1006372E0 /* DummyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyTableViewCell.swift; sourceTree = "<group>"; };
-		C8636B47252FA5B1006372E0 /* DummyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DummyTableViewCell.xib; sourceTree = "<group>"; };
+		C8636B42252F9AFC006372E0 /* PopularPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotoTableViewCell.swift; sourceTree = "<group>"; };
+		C8636B43252F9AFC006372E0 /* PopularPhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularPhotoTableViewCell.xib; sourceTree = "<group>"; };
+		C8636B46252FA5B1006372E0 /* LoadMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreTableViewCell.swift; sourceTree = "<group>"; };
+		C8636B47252FA5B1006372E0 /* LoadMoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreTableViewCell.xib; sourceTree = "<group>"; };
+		C8E044252530BC460062C7C1 /* PopularPhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotoService.swift; sourceTree = "<group>"; };
+		C8E044282530CD400062C7C1 /* PopularPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotoResponse.swift; sourceTree = "<group>"; };
+		C8E0442F2530D0640062C7C1 /* Photoo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photoo.swift; sourceTree = "<group>"; };
+		C8E044332530D3E60062C7C1 /* PopularPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotoViewModel.swift; sourceTree = "<group>"; };
+		C8E0443D2530E2A50062C7C1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		C8E044442530EAA70062C7C1 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,17 +100,23 @@
 		C8636B2C252F993D006372E0 /* WongnaiIntern */ = {
 			isa = PBXGroup;
 			children = (
+				C8E0443D2530E2A50062C7C1 /* R.generated.swift */,
 				C8636B2D252F993D006372E0 /* AppDelegate.swift */,
 				C8636B2F252F993D006372E0 /* SceneDelegate.swift */,
-				C8636B31252F993D006372E0 /* ViewController.swift */,
+				C8636B31252F993D006372E0 /* PopularPhotoViewController.swift */,
 				C8636B33252F993D006372E0 /* Main.storyboard */,
 				C8636B36252F993E006372E0 /* Assets.xcassets */,
 				C8636B38252F993E006372E0 /* LaunchScreen.storyboard */,
 				C8636B3B252F993E006372E0 /* Info.plist */,
-				C8636B42252F9AFC006372E0 /* TableViewCell.swift */,
-				C8636B43252F9AFC006372E0 /* TableViewCell.xib */,
-				C8636B46252FA5B1006372E0 /* DummyTableViewCell.swift */,
-				C8636B47252FA5B1006372E0 /* DummyTableViewCell.xib */,
+				C8636B42252F9AFC006372E0 /* PopularPhotoTableViewCell.swift */,
+				C8636B43252F9AFC006372E0 /* PopularPhotoTableViewCell.xib */,
+				C8636B46252FA5B1006372E0 /* LoadMoreTableViewCell.swift */,
+				C8636B47252FA5B1006372E0 /* LoadMoreTableViewCell.xib */,
+				C8E044252530BC460062C7C1 /* PopularPhotoService.swift */,
+				C8E044282530CD400062C7C1 /* PopularPhotoResponse.swift */,
+				C8E0442F2530D0640062C7C1 /* Photoo.swift */,
+				C8E044332530D3E60062C7C1 /* PopularPhotoViewModel.swift */,
+				C8E044442530EAA70062C7C1 /* PhotoViewModel.swift */,
 			);
 			path = WongnaiIntern;
 			sourceTree = "<group>";
@@ -111,9 +129,11 @@
 			buildConfigurationList = C8636B3E252F993E006372E0 /* Build configuration list for PBXNativeTarget "WongnaiIntern" */;
 			buildPhases = (
 				11CE758B2C752B3A6994E526 /* [CP] Check Pods Manifest.lock */,
+				C8E044392530E06B0062C7C1 /* R.swift */,
 				C8636B26252F993D006372E0 /* Sources */,
 				C8636B27252F993D006372E0 /* Frameworks */,
 				C8636B28252F993D006372E0 /* Resources */,
+				8C3C090D408772E9B2A6049C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,9 +183,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8636B3A252F993E006372E0 /* LaunchScreen.storyboard in Resources */,
-				C8636B45252F9AFC006372E0 /* TableViewCell.xib in Resources */,
+				C8636B45252F9AFC006372E0 /* PopularPhotoTableViewCell.xib in Resources */,
 				C8636B37252F993E006372E0 /* Assets.xcassets in Resources */,
-				C8636B49252FA5B1006372E0 /* DummyTableViewCell.xib in Resources */,
+				C8636B49252FA5B1006372E0 /* LoadMoreTableViewCell.xib in Resources */,
 				C8636B35252F993D006372E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +215,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8C3C090D408772E9B2A6049C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WongnaiIntern/Pods-WongnaiIntern-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WongnaiIntern/Pods-WongnaiIntern-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WongnaiIntern/Pods-WongnaiIntern-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8E044392530E06B0062C7C1 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -202,11 +259,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8636B32252F993D006372E0 /* ViewController.swift in Sources */,
-				C8636B44252F9AFC006372E0 /* TableViewCell.swift in Sources */,
+				C8636B32252F993D006372E0 /* PopularPhotoViewController.swift in Sources */,
+				C8E044452530EAA70062C7C1 /* PhotoViewModel.swift in Sources */,
+				C8636B44252F9AFC006372E0 /* PopularPhotoTableViewCell.swift in Sources */,
+				C8E044302530D0640062C7C1 /* Photoo.swift in Sources */,
+				C8E044342530D3E60062C7C1 /* PopularPhotoViewModel.swift in Sources */,
 				C8636B2E252F993D006372E0 /* AppDelegate.swift in Sources */,
+				C8E044262530BC460062C7C1 /* PopularPhotoService.swift in Sources */,
+				C8E044292530CD400062C7C1 /* PopularPhotoResponse.swift in Sources */,
+				C8E0443E2530E2A50062C7C1 /* R.generated.swift in Sources */,
 				C8636B30252F993D006372E0 /* SceneDelegate.swift in Sources */,
-				C8636B48252FA5B1006372E0 /* DummyTableViewCell.swift in Sources */,
+				C8636B48252FA5B1006372E0 /* LoadMoreTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +417,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NK47D3F5VR;
 				INFOPLIST_FILE = WongnaiIntern/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -373,6 +437,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NK47D3F5VR;
 				INFOPLIST_FILE = WongnaiIntern/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
