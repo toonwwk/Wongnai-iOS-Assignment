@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AA8903079097534906A8A6C /* Pods_WongnaiIntern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640EEB685D18CEFBCF13DE71 /* Pods_WongnaiIntern.framework */; };
 		C8636B2E252F993D006372E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B2D252F993D006372E0 /* AppDelegate.swift */; };
 		C8636B30252F993D006372E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B2F252F993D006372E0 /* SceneDelegate.swift */; };
 		C8636B32252F993D006372E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B31252F993D006372E0 /* ViewController.swift */; };
 		C8636B35252F993D006372E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8636B33252F993D006372E0 /* Main.storyboard */; };
 		C8636B37252F993E006372E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8636B36252F993E006372E0 /* Assets.xcassets */; };
 		C8636B3A252F993E006372E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8636B38252F993E006372E0 /* LaunchScreen.storyboard */; };
+		C8636B44252F9AFC006372E0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B42252F9AFC006372E0 /* TableViewCell.swift */; };
+		C8636B45252F9AFC006372E0 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8636B43252F9AFC006372E0 /* TableViewCell.xib */; };
+		C8636B48252FA5B1006372E0 /* DummyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B46252FA5B1006372E0 /* DummyTableViewCell.swift */; };
+		C8636B49252FA5B1006372E0 /* DummyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8636B47252FA5B1006372E0 /* DummyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51CCB3F7FACBC8B1F6D26BF3 /* Pods-WongnaiIntern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WongnaiIntern.debug.xcconfig"; path = "Target Support Files/Pods-WongnaiIntern/Pods-WongnaiIntern.debug.xcconfig"; sourceTree = "<group>"; };
+		640EEB685D18CEFBCF13DE71 /* Pods_WongnaiIntern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WongnaiIntern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3969450D2B1CF973F9ED802 /* Pods-WongnaiIntern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WongnaiIntern.release.xcconfig"; path = "Target Support Files/Pods-WongnaiIntern/Pods-WongnaiIntern.release.xcconfig"; sourceTree = "<group>"; };
 		C8636B2A252F993D006372E0 /* WongnaiIntern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WongnaiIntern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8636B2D252F993D006372E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8636B2F252F993D006372E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +32,10 @@
 		C8636B36252F993E006372E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8636B39252F993E006372E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8636B3B252F993E006372E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8636B42252F9AFC006372E0 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C8636B43252F9AFC006372E0 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		C8636B46252FA5B1006372E0 /* DummyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyTableViewCell.swift; sourceTree = "<group>"; };
+		C8636B47252FA5B1006372E0 /* DummyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DummyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA8903079097534906A8A6C /* Pods_WongnaiIntern.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29B54DBA012D2B5FC251472E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				640EEB685D18CEFBCF13DE71 /* Pods_WongnaiIntern.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5FFB5A7CDE3A9C7AEF40A34F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				51CCB3F7FACBC8B1F6D26BF3 /* Pods-WongnaiIntern.debug.xcconfig */,
+				C3969450D2B1CF973F9ED802 /* Pods-WongnaiIntern.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C8636B21252F993D006372E0 = {
 			isa = PBXGroup;
 			children = (
 				C8636B2C252F993D006372E0 /* WongnaiIntern */,
 				C8636B2B252F993D006372E0 /* Products */,
+				5FFB5A7CDE3A9C7AEF40A34F /* Pods */,
+				29B54DBA012D2B5FC251472E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +95,10 @@
 				C8636B36252F993E006372E0 /* Assets.xcassets */,
 				C8636B38252F993E006372E0 /* LaunchScreen.storyboard */,
 				C8636B3B252F993E006372E0 /* Info.plist */,
+				C8636B42252F9AFC006372E0 /* TableViewCell.swift */,
+				C8636B43252F9AFC006372E0 /* TableViewCell.xib */,
+				C8636B46252FA5B1006372E0 /* DummyTableViewCell.swift */,
+				C8636B47252FA5B1006372E0 /* DummyTableViewCell.xib */,
 			);
 			path = WongnaiIntern;
 			sourceTree = "<group>";
@@ -74,6 +110,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8636B3E252F993E006372E0 /* Build configuration list for PBXNativeTarget "WongnaiIntern" */;
 			buildPhases = (
+				11CE758B2C752B3A6994E526 /* [CP] Check Pods Manifest.lock */,
 				C8636B26252F993D006372E0 /* Sources */,
 				C8636B27252F993D006372E0 /* Frameworks */,
 				C8636B28252F993D006372E0 /* Resources */,
@@ -126,12 +163,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8636B3A252F993E006372E0 /* LaunchScreen.storyboard in Resources */,
+				C8636B45252F9AFC006372E0 /* TableViewCell.xib in Resources */,
 				C8636B37252F993E006372E0 /* Assets.xcassets in Resources */,
+				C8636B49252FA5B1006372E0 /* DummyTableViewCell.xib in Resources */,
 				C8636B35252F993D006372E0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11CE758B2C752B3A6994E526 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WongnaiIntern-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C8636B26252F993D006372E0 /* Sources */ = {
@@ -139,8 +203,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8636B32252F993D006372E0 /* ViewController.swift in Sources */,
+				C8636B44252F9AFC006372E0 /* TableViewCell.swift in Sources */,
 				C8636B2E252F993D006372E0 /* AppDelegate.swift in Sources */,
 				C8636B30252F993D006372E0 /* SceneDelegate.swift in Sources */,
+				C8636B48252FA5B1006372E0 /* DummyTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +348,7 @@
 		};
 		C8636B3F252F993E006372E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51CCB3F7FACBC8B1F6D26BF3 /* Pods-WongnaiIntern.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +367,7 @@
 		};
 		C8636B40252F993E006372E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3969450D2B1CF973F9ED802 /* Pods-WongnaiIntern.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
