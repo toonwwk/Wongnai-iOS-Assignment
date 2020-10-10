@@ -12,6 +12,10 @@ enum PopularPhotoSectionType: Int, CaseIterable {
     case PopulatPhoto, LoadMore
 }
 
+enum PopularPhotoServiceStatusType {
+    case loading, success, failed
+}
+
 class PopularPhotoViewModel {
     
     private let popularPhotoService = PopularPhotoService()
@@ -19,6 +23,7 @@ class PopularPhotoViewModel {
     var currentPage = 1
     var updateHandler: (() -> ())?
     var canLoadMorePhoto = false
+    var statusType: PopularPhotoServiceStatusType = .loading
     
     init() {
         fetchPhoto()
@@ -27,17 +32,14 @@ class PopularPhotoViewModel {
     func fetchPhoto() {
         popularPhotoService.fetchData(currentPage: currentPage) { (popularPhotoData) in
             guard let photos = popularPhotoData.photos, let totalPages = popularPhotoData.totalPages else { return }
-                        
-            for photo in photos {
-                self.popularPhoto.append(photo)
-            }
-                        
+            self.popularPhoto += photos
             self.canLoadMorePhoto = totalPages != self.currentPage
             self.currentPage += 1
-            
+            self.statusType = .success
             self.updateHandler?()
         } isFailed: { (error) in
             print(error.localizedDescription)
+            self.statusType = .failed
         }
     }
     
@@ -48,22 +50,22 @@ class PopularPhotoViewModel {
     func reloadData() {
         currentPage = 1
         popularPhoto.removeAll()
+        statusType = .loading
         updateHandler?()
         canLoadMorePhoto = false
         fetchPhoto()
     }
     
     func numberOfSections() -> Int {
-        
         return PopularPhotoSectionType.allCases.count
     }
     
     func numberOfRowsInSection(_ section: Int) -> Int {
         switch sectionType(at: IndexPath(row: 0, section: section)) {
         case .PopulatPhoto:
-            return popularPhoto.count + numberOfInsertionPhoto()
+            return statusType == .success ? (popularPhoto.count + numberOfInsertionPhoto()) : 0
         case .LoadMore:
-            return canLoadMorePhoto ? 1 : 0
+            return statusType == .success ? (canLoadMorePhoto ? 1 : 0) : 0
         }
     }
     
