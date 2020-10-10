@@ -1,5 +1,5 @@
 //
-//  TableViewCell.swift
+//  PopularImagePostTableViewCell.swift
 //  WongnaiIntern
 //
 //  Created by Kanokporn Wongwaitayakul on 9/10/2563 BE.
@@ -9,22 +9,22 @@
 import UIKit
 import Kingfisher
 
-class PopularPhotoTableViewCell: UITableViewCell {
+class PopularImagePostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var likeNumberLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var likeIconImageView: UIImageView!
-    @IBOutlet weak var imageImageView: UIImageView!
-    
+    @IBOutlet weak var popularImageImageView: UIImageView!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var separatorView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        commonInit()
     }
     
-    func configureCell(with viewModel : PhotoViewModel) {
+    func commonInit() {
         nameLabel.textColor = UIColor(red: 0.114, green: 0.114, blue: 0.114, alpha: 1)
         nameLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         descriptionLabel.textColor = UIColor(red: 0.246, green: 0.246, blue: 0.246, alpha: 1)
@@ -34,11 +34,13 @@ class PopularPhotoTableViewCell: UITableViewCell {
         likeIconImageView.image = R.image.likeIcon()
         detailView.backgroundColor = .white
         separatorView.backgroundColor = UIColor(red: 0.933, green: 0.933, blue: 0.933, alpha: 1)
-        
-        imageImageView.kf.setImage(with: viewModel.url)
+    }
+    
+    func configureCell(with viewModel : PopularImagePostViewModel) {
+        popularImageImageView.kf.setImage(with: viewModel.imageUrl)
         nameLabel.text = viewModel.name
         descriptionLabel.text = viewModel.description
-        likeNumberLabel.text = viewModel.likeNumber
+        likeNumberLabel.text = viewModel.formattedLikeNumber
     }
 
 }

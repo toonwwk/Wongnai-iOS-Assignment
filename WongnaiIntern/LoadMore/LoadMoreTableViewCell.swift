@@ -1,5 +1,5 @@
 //
-//  DummyTableViewCell.swift
+//  LoadMoreTableViewCell.swift
 //  WongnaiIntern
 //
 //  Created by Kanokporn Wongwaitayakul on 9/10/2563 BE.

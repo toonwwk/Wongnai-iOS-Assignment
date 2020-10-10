@@ -1,5 +1,5 @@
 //
-//  PhotoViewModel.swift
+//  PopularImage.swift
 //  WongnaiIntern
 //
 //  Created by Kanokporn Wongwaitayakul on 10/10/2563 BE.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct PhotoViewModel {
-    let url: URL
-    let name: String
-    let description: String
-    let likeNumber: String
+struct PopularImage: Decodable {
+    let imageUrl: [String]?
+    let name: String?
+    let description: String?
+    let positiveVotesCount : Int?
 }

@@ -91,22 +91,22 @@ struct R: Rswift.Validatable {
   #if os(iOS) || os(tvOS)
   /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
+    /// Storyboard `BoardViewController`.
+    static let boardViewController = _R.storyboard.boardViewController()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "BoardViewController", bundle: ...)`
+    static func boardViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.boardViewController)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
     }
     #endif
 
@@ -116,9 +116,9 @@ struct R: Rswift.Validatable {
 
   /// This `R.id` struct is generated, and contains static references to accessibility identifiers.
   struct id {
-    struct insertionPhotoTableViewCell {
-      /// Accessibility identifier `InsertionPhotoTableViewCell`.
-      static let insertionPhotoTableViewCell: String = "InsertionPhotoTableViewCell"
+    struct imageInsertionPostTableViewCell {
+      /// Accessibility identifier `ImageInsertionPostTableViewCell`.
+      static let imageInsertionPostTableViewCell: String = "ImageInsertionPostTableViewCell"
 
       fileprivate init() {}
     }
@@ -130,9 +130,9 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct popularPhotoTableViewCell {
-      /// Accessibility identifier `PopularPhotoTableViewCell`.
-      static let popularPhotoTableViewCell: String = "PopularPhotoTableViewCell"
+    struct popularImagePostTableViewCell {
+      /// Accessibility identifier `PopularImagePostTableViewCell`.
+      static let popularImagePostTableViewCell: String = "PopularImagePostTableViewCell"
 
       fileprivate init() {}
     }
@@ -178,7 +178,7 @@ struct R: Rswift.Validatable {
             static let _key = "Default Configuration"
             static let uiSceneConfigurationName = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneConfigurationName") ?? "Default Configuration"
             static let uiSceneDelegateClassName = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneDelegateClassName") ?? "$(PRODUCT_MODULE_NAME).SceneDelegate"
-            static let uiSceneStoryboardFile = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneStoryboardFile") ?? "Main"
+            static let uiSceneStoryboardFile = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneStoryboardFile") ?? "BoardViewController"
 
             fileprivate init() {}
           }
@@ -197,18 +197,18 @@ struct R: Rswift.Validatable {
 
   /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
-    /// Nib `InsertionPhotoTableViewCell`.
-    static let insertionPhotoTableViewCell = _R.nib._InsertionPhotoTableViewCell()
+    /// Nib `ImageInsertionPostTableViewCell`.
+    static let imageInsertionPostTableViewCell = _R.nib._ImageInsertionPostTableViewCell()
     /// Nib `LoadMoreTableViewCell`.
     static let loadMoreTableViewCell = _R.nib._LoadMoreTableViewCell()
-    /// Nib `PopularPhotoTableViewCell`.
-    static let popularPhotoTableViewCell = _R.nib._PopularPhotoTableViewCell()
+    /// Nib `PopularImagePostTableViewCell`.
+    static let popularImagePostTableViewCell = _R.nib._PopularImagePostTableViewCell()
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "InsertionPhotoTableViewCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.insertionPhotoTableViewCell) instead")
-    static func insertionPhotoTableViewCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.insertionPhotoTableViewCell)
+    /// `UINib(name: "ImageInsertionPostTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.imageInsertionPostTableViewCell) instead")
+    static func imageInsertionPostTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.imageInsertionPostTableViewCell)
     }
     #endif
 
@@ -221,23 +221,23 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "PopularPhotoTableViewCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.popularPhotoTableViewCell) instead")
-    static func popularPhotoTableViewCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.popularPhotoTableViewCell)
+    /// `UINib(name: "PopularImagePostTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.popularImagePostTableViewCell) instead")
+    static func popularImagePostTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.popularImagePostTableViewCell)
     }
     #endif
 
-    static func insertionPhotoTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> InsertionPhotoTableViewCell? {
-      return R.nib.insertionPhotoTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? InsertionPhotoTableViewCell
+    static func imageInsertionPostTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ImageInsertionPostTableViewCell? {
+      return R.nib.imageInsertionPostTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ImageInsertionPostTableViewCell
     }
 
     static func loadMoreTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoadMoreTableViewCell? {
       return R.nib.loadMoreTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoadMoreTableViewCell
     }
 
-    static func popularPhotoTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PopularPhotoTableViewCell? {
-      return R.nib.popularPhotoTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PopularPhotoTableViewCell
+    static func popularImagePostTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PopularImagePostTableViewCell? {
+      return R.nib.popularImagePostTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PopularImagePostTableViewCell
     }
 
     fileprivate init() {}
@@ -245,12 +245,12 @@ struct R: Rswift.Validatable {
 
   /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
-    /// Reuse identifier `InsertionPhotoTableViewCell`.
-    static let insertionPhotoTableViewCell: Rswift.ReuseIdentifier<InsertionPhotoTableViewCell> = Rswift.ReuseIdentifier(identifier: "InsertionPhotoTableViewCell")
+    /// Reuse identifier `ImageInsertionPostTableViewCell`.
+    static let imageInsertionPostTableViewCell: Rswift.ReuseIdentifier<ImageInsertionPostTableViewCell> = Rswift.ReuseIdentifier(identifier: "ImageInsertionPostTableViewCell")
     /// Reuse identifier `LoadMoreTableViewCell`.
     static let loadMoreTableViewCell: Rswift.ReuseIdentifier<LoadMoreTableViewCell> = Rswift.ReuseIdentifier(identifier: "LoadMoreTableViewCell")
-    /// Reuse identifier `PopularPhotoTableViewCell`.
-    static let popularPhotoTableViewCell: Rswift.ReuseIdentifier<PopularPhotoTableViewCell> = Rswift.ReuseIdentifier(identifier: "PopularPhotoTableViewCell")
+    /// Reuse identifier `PopularImagePostTableViewCell`.
+    static let popularImagePostTableViewCell: Rswift.ReuseIdentifier<PopularImagePostTableViewCell> = Rswift.ReuseIdentifier(identifier: "PopularImagePostTableViewCell")
 
     fileprivate init() {}
   }
@@ -277,15 +277,15 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
-    struct _InsertionPhotoTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
-      typealias ReusableType = InsertionPhotoTableViewCell
+    struct _ImageInsertionPostTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ImageInsertionPostTableViewCell
 
       let bundle = R.hostingBundle
-      let identifier = "InsertionPhotoTableViewCell"
-      let name = "InsertionPhotoTableViewCell"
+      let identifier = "ImageInsertionPostTableViewCell"
+      let name = "ImageInsertionPostTableViewCell"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> InsertionPhotoTableViewCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? InsertionPhotoTableViewCell
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ImageInsertionPostTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ImageInsertionPostTableViewCell
       }
 
       fileprivate init() {}
@@ -305,15 +305,15 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _PopularPhotoTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
-      typealias ReusableType = PopularPhotoTableViewCell
+    struct _PopularImagePostTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = PopularImagePostTableViewCell
 
       let bundle = R.hostingBundle
-      let identifier = "PopularPhotoTableViewCell"
-      let name = "PopularPhotoTableViewCell"
+      let identifier = "PopularImagePostTableViewCell"
+      let name = "PopularImagePostTableViewCell"
 
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PopularPhotoTableViewCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PopularPhotoTableViewCell
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> PopularImagePostTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PopularImagePostTableViewCell
       }
 
       fileprivate init() {}
@@ -327,19 +327,19 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
-      try launchScreen.validate()
+      try boardViewController.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try main.validate()
+      try launchScreen.validate()
       #endif
     }
 
     #if os(iOS) || os(tvOS)
-    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UIViewController
+    struct boardViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
-      let name = "LaunchScreen"
+      let name = "BoardViewController"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
@@ -351,11 +351,11 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
+    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UIViewController
 
       let bundle = R.hostingBundle
-      let name = "Main"
+      let name = "LaunchScreen"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {

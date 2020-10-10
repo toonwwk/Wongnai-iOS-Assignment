@@ -1,5 +1,5 @@
 //
-//  PopularPhotoModel.swift
+//  PopularImageResponse.swift
 //  WongnaiIntern
 //
 //  Created by Kanokporn Wongwaitayakul on 9/10/2563 BE.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PopularPhotoResponse: Decodable {
-    var totalPages: Int?
-    var photos: [Photo]?
+struct PopularImageResponse: Decodable {
+    let totalPages: Int?
+    let photos: [PopularImage]?
 }

@@ -1,5 +1,5 @@
 //
-//  PopularPhotoService.swift
+//  PopularImageService.swift
 //  WongnaiIntern
 //
 //  Created by Kanokporn Wongwaitayakul on 9/10/2563 BE.
@@ -9,11 +9,12 @@
 import Foundation
 import Alamofire
 
-struct PopularPhotoService {
+struct PopularImageService {
 
-    func fetchData(currentPage: Int, isCompleted: @escaping (PopularPhotoResponse) -> (), isFailed: @escaping (Error) -> ()) {
-        
-        let url = "https://api.500px.com/v1/photos?feature=popular&page=" + String(currentPage)
+    let baseUrl = "https://api.500px.com/v1/photos?feature=popular&page="
+    
+    func fetchData(currentPage: Int, isCompleted: @escaping (PopularImageResponse) -> (), isFailed: @escaping (Error) -> ()) {
+        let url = baseUrl + String(currentPage)
         
         AF.request(url).responseJSON { response in
             switch response.result {
@@ -22,14 +23,12 @@ struct PopularPhotoService {
             case .success:
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                
                 do {
-                    let data = try decoder.decode(PopularPhotoResponse.self, from: response.data!)
+                    let data = try decoder.decode(PopularImageResponse.self, from: response.data!)
                     isCompleted(data)
                 } catch {
                     isFailed(error)
                 }
-                
             }
         }
     }

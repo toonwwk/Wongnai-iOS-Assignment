@@ -1,5 +1,5 @@
 //
-//  PopularPhotoViewController.swift
+//  BoardViewController.swift
 //  WongnaiIntern
 //
 //  Created by Kanokporn Wongwaitayakul on 9/10/2563 BE.
@@ -8,34 +8,33 @@
 
 import UIKit
 
-class PopularPhotoViewController: UIViewController {
+class BoardViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var contentTableView: UITableView!
     
-    var viewModel = PopularPhotoViewModel()
-    private let refreshControl = UIRefreshControl()
+    let viewModel = BoardViewModel()
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configure()
+        configureViewController()
         bindViewModel()
     }
     
-    func configure() {
-        tableView.register(R.nib.popularPhotoTableViewCell)
-        tableView.register(R.nib.loadMoreTableViewCell)
-        tableView.register(R.nib.insertionPhotoTableViewCell)
+    func configureViewController() {
+        contentTableView.register(R.nib.popularImagePostTableViewCell)
+        contentTableView.register(R.nib.imageInsertionPostTableViewCell)
+        contentTableView.register(R.nib.loadMoreTableViewCell)
         refreshControl.addTarget(self, action: #selector(refreshControlValueDidChange), for: .valueChanged)
-        tableView.refreshControl = refreshControl
+        contentTableView.refreshControl = refreshControl
     }
     
     func bindViewModel() {
         viewModel.updateHandler = { [weak self] in
             guard let self = self else { return }
             self.refreshControl.endRefreshing()
-            UIView.transition(with: self.tableView, duration: 0.1, options: .transitionCrossDissolve, animations: {
-                self.tableView.reloadData()
+            UIView.transition(with: self.contentTableView, duration: 0.1, options: .transitionCrossDissolve, animations: {
+                self.contentTableView.reloadData()
             })
         }
     }
@@ -46,8 +45,9 @@ class PopularPhotoViewController: UIViewController {
 
 }
 
-// MARK: - tableview
-extension PopularPhotoViewController: UITableViewDataSource, UITableViewDelegate {
+// MARK: - tableview datasource and delegate
+extension BoardViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.numberOfSections()
     }
@@ -58,17 +58,14 @@ extension PopularPhotoViewController: UITableViewDataSource, UITableViewDelegate
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch viewModel.sectionType(at: indexPath) {
-        case .PopulatPhoto:
-            
-            switch viewModel.dataForRow(at: indexPath) {
-            case is PhotoViewModel:
-                let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.popularPhotoTableViewCell, for: indexPath)
-                cell?.configureCell(with: viewModel.dataForRow(at: indexPath) as! PhotoViewModel)
-                return cell!
-            default:
-                let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.insertionPhotoTableViewCell, for: indexPath)
-                cell?.configureCell()
-                return cell!
+        case .Post:
+            if let viewModel = viewModel.dataForRow(at: indexPath) as? PopularImagePostViewModel {
+                let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.popularImagePostTableViewCell, for: indexPath)!
+                cell.configureCell(with: viewModel)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.imageInsertionPostTableViewCell, for: indexPath)!
+                return cell
             }
         case .LoadMore:
             let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.loadMoreTableViewCell, for: indexPath)!
@@ -80,11 +77,12 @@ extension PopularPhotoViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         switch viewModel.sectionType(at: indexPath) {
         case .LoadMore:
-            viewModel.loadMorePhotos()
+            viewModel.loadMoreImage()
         default:
             return
         }
     }
+    
 }
 
 
