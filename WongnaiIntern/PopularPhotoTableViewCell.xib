@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -104,16 +103,15 @@
                     <constraint firstItem="lSQ-Vq-JFb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lkO-rE-Jir"/>
                 </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <accessibility key="accessibilityConfiguration" identifier="PopularPhotoTableViewCell"/>
             <connections>
-                <outlet property="descriptionLabel" destination="CMC-Cm-LZI" id="obx-cZ-2Vc"/>
-                <outlet property="detailView" destination="lSQ-Vq-JFb" id="Mzu-94-ifm"/>
-                <outlet property="imageImageView" destination="qd0-bu-Ev9" id="3gP-Yg-HzM"/>
-                <outlet property="likeIconImageView" destination="MaE-8n-dgd" id="Zlv-Ef-pfk"/>
-                <outlet property="likeNumberLabel" destination="Gf9-kh-Rl0" id="i91-5M-MZ2"/>
-                <outlet property="nameLabel" destination="nZQ-qW-uw3" id="fkP-RF-zdg"/>
-                <outlet property="separatorView" destination="QtJ-Lr-9lI" id="H28-u6-Pfr"/>
+                <outlet property="descriptionLabel" destination="CMC-Cm-LZI" id="ZzA-fb-eMu"/>
+                <outlet property="detailView" destination="lSQ-Vq-JFb" id="s2e-an-U3i"/>
+                <outlet property="imageImageView" destination="qd0-bu-Ev9" id="SZ8-Vm-ldL"/>
+                <outlet property="likeIconImageView" destination="MaE-8n-dgd" id="brm-Ov-48A"/>
+                <outlet property="likeNumberLabel" destination="Gf9-kh-Rl0" id="fyZ-7b-SYE"/>
+                <outlet property="nameLabel" destination="nZQ-qW-uw3" id="dyh-bE-Iou"/>
+                <outlet property="separatorView" destination="QtJ-Lr-9lI" id="fJm-cP-Q9e"/>
             </connections>
             <point key="canvasLocation" x="273.1884057971015" y="217.96875"/>
         </tableViewCell>

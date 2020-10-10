@@ -1,5 +1,5 @@
 //
-//  PopularPhotoTableViewCell.swift
+//  PopularPhotoView.swift
 //  WongnaiIntern
 //
 //  Created by Kanokporn Wongwaitayakul on 10/10/2563 BE.
@@ -7,20 +7,33 @@
 //
 
 import UIKit
+import Kingfisher
 
-class PopularPhotoTableViewCell: UITableViewCell {
-
+class PopularPhotoView: UIView {
+    
+    @IBOutlet weak var likeNumberLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var likeIconImageView: UIImageView!
     @IBOutlet weak var imageImageView: UIImageView!
-    @IBOutlet weak var likeNumberLabel: UILabel!
+    
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var separatorView: UIView!
-    @IBOutlet weak var likeIconImageView: UIImageView!
+    public var nibName: String { type(of: self).description().components(separatedBy: ".").last ?? "" }
+
+    @IBOutlet weak var descriptionFooter: NSLayoutConstraint!
+    @IBOutlet weak var imageFooter: NSLayoutConstraint!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        commonInit()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    static func instanceFromNib() -> PopularPhotoView {
+        return R.nib.popularPhotoView.firstView(owner: nil)!
     }
     
     func commonInit() {
@@ -40,5 +53,8 @@ class PopularPhotoTableViewCell: UITableViewCell {
         nameLabel.text = viewModel.name
         descriptionLabel.text = viewModel.description
         likeNumberLabel.text = viewModel.likeNumber
+        
     }
+
 }
+

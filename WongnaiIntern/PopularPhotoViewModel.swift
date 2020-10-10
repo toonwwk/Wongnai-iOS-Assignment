@@ -74,6 +74,9 @@ class PopularPhotoViewModel {
     func dataForRow(at indexPath: IndexPath) -> Any? {
         switch sectionType(at: indexPath) {
         case .PopulatPhoto:
+//            if indexPath.row % 5  == 0 {
+//                return nil
+//            }
             let photo = popularPhoto[indexPath.row]
             return PhotoViewModel(url: URL(string: photo.imageUrl?[0] ?? "")!, name: photo.name ?? "", description: photo.description ?? "", likeNumber: formatLikeNumber(with: photo.positiveVotesCount))
         case .LoadMore:
