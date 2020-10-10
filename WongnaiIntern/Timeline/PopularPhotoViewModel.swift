@@ -61,7 +61,7 @@ class PopularPhotoViewModel {
     func numberOfRowsInSection(_ section: Int) -> Int {
         switch sectionType(at: IndexPath(row: 0, section: section)) {
         case .PopulatPhoto:
-            return popularPhoto.count
+            return popularPhoto.count + numberOfInsertionPhoto()
         case .LoadMore:
             return canLoadMorePhoto ? 1 : 0
         }
@@ -74,7 +74,11 @@ class PopularPhotoViewModel {
     func dataForRow(at indexPath: IndexPath) -> Any? {
         switch sectionType(at: indexPath) {
         case .PopulatPhoto:
-            let photo = popularPhoto[indexPath.row]
+            if (isInsertionPhotoTableViewCell(indexPath)) {
+                return nil
+            }
+            
+            let photo = popularPhoto[indexWithoutInsertionPhoto(at: indexPath)]
             return PhotoViewModel(url: URL(string: photo.imageUrl?[0] ?? "")!, name: photo.name ?? "", description: photo.description ?? "", likeNumber: formatLikeNumber(with: photo.positiveVotesCount))
         case .LoadMore:
             return nil
@@ -86,5 +90,16 @@ class PopularPhotoViewModel {
         formatter.numberStyle = .decimal
         return formatter.string(for: int) ?? "0"
     }
+    
+    func isInsertionPhotoTableViewCell(_ indexPath: IndexPath) -> Bool {
+        return (indexPath.row + 1) % 5 == 0
+    }
 
+    func numberOfInsertionPhoto() -> Int{
+        return Int((floor(Double(popularPhoto.count / 4))))
+    }
+    
+    func indexWithoutInsertionPhoto(at indexPath: IndexPath) -> Int{
+        return indexPath.row - (Int((floor(Double(indexPath.row / 5)))))
+    }
 }

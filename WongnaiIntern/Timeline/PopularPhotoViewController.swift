@@ -25,6 +25,7 @@ class PopularPhotoViewController: UIViewController {
     func configure() {
         tableView.register(R.nib.popularPhotoTableViewCell)
         tableView.register(R.nib.loadMoreTableViewCell)
+        tableView.register(R.nib.insertionPhotoTableViewCell)
         refreshControl.addTarget(self, action: #selector(refreshControlValueDidChange), for: .valueChanged)
         tableView.refreshControl = refreshControl
     }
@@ -58,9 +59,17 @@ extension PopularPhotoViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch viewModel.sectionType(at: indexPath) {
         case .PopulatPhoto:
-            let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.popularPhotoTableViewCell, for: indexPath)
-            cell?.configureCell(with: viewModel.dataForRow(at: indexPath) as! PhotoViewModel)
-            return cell!
+            
+            switch viewModel.dataForRow(at: indexPath) {
+            case is PhotoViewModel:
+                let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.popularPhotoTableViewCell, for: indexPath)
+                cell?.configureCell(with: viewModel.dataForRow(at: indexPath) as! PhotoViewModel)
+                return cell!
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.insertionPhotoTableViewCell, for: indexPath)
+                cell?.configureCell()
+                return cell!
+            }
         case .LoadMore:
             let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.loadMoreTableViewCell, for: indexPath)!
             cell.configureCell()

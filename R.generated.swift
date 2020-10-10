@@ -116,6 +116,13 @@ struct R: Rswift.Validatable {
 
   /// This `R.id` struct is generated, and contains static references to accessibility identifiers.
   struct id {
+    struct insertionPhotoTableViewCell {
+      /// Accessibility identifier `InsertionPhotoTableViewCell`.
+      static let insertionPhotoTableViewCell: String = "InsertionPhotoTableViewCell"
+
+      fileprivate init() {}
+    }
+
     struct loadMoreTableViewCell {
       /// Accessibility identifier `LoadMoreTableViewCell`.
       static let loadMoreTableViewCell: String = "LoadMoreTableViewCell"
@@ -188,12 +195,22 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
+    /// Nib `InsertionPhotoTableViewCell`.
+    static let insertionPhotoTableViewCell = _R.nib._InsertionPhotoTableViewCell()
     /// Nib `LoadMoreTableViewCell`.
     static let loadMoreTableViewCell = _R.nib._LoadMoreTableViewCell()
     /// Nib `PopularPhotoTableViewCell`.
     static let popularPhotoTableViewCell = _R.nib._PopularPhotoTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "InsertionPhotoTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.insertionPhotoTableViewCell) instead")
+    static func insertionPhotoTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.insertionPhotoTableViewCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "LoadMoreTableViewCell", in: bundle)`
@@ -211,6 +228,10 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func insertionPhotoTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> InsertionPhotoTableViewCell? {
+      return R.nib.insertionPhotoTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? InsertionPhotoTableViewCell
+    }
+
     static func loadMoreTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> LoadMoreTableViewCell? {
       return R.nib.loadMoreTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoadMoreTableViewCell
     }
@@ -222,8 +243,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `InsertionPhotoTableViewCell`.
+    static let insertionPhotoTableViewCell: Rswift.ReuseIdentifier<InsertionPhotoTableViewCell> = Rswift.ReuseIdentifier(identifier: "InsertionPhotoTableViewCell")
     /// Reuse identifier `LoadMoreTableViewCell`.
     static let loadMoreTableViewCell: Rswift.ReuseIdentifier<LoadMoreTableViewCell> = Rswift.ReuseIdentifier(identifier: "LoadMoreTableViewCell")
     /// Reuse identifier `PopularPhotoTableViewCell`.
@@ -254,6 +277,20 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _InsertionPhotoTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = InsertionPhotoTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "InsertionPhotoTableViewCell"
+      let name = "InsertionPhotoTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> InsertionPhotoTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? InsertionPhotoTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _LoadMoreTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
       typealias ReusableType = LoadMoreTableViewCell
 

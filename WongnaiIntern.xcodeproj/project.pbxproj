@@ -18,6 +18,8 @@
 		C8636B45252F9AFC006372E0 /* PopularPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8636B43252F9AFC006372E0 /* PopularPhotoTableViewCell.xib */; };
 		C8636B48252FA5B1006372E0 /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8636B46252FA5B1006372E0 /* LoadMoreTableViewCell.swift */; };
 		C8636B49252FA5B1006372E0 /* LoadMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8636B47252FA5B1006372E0 /* LoadMoreTableViewCell.xib */; };
+		C8A9707E2531E02B00585D67 /* InsertionPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A9707C2531E02B00585D67 /* InsertionPhotoTableViewCell.swift */; };
+		C8A9707F2531E02B00585D67 /* InsertionPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8A9707D2531E02B00585D67 /* InsertionPhotoTableViewCell.xib */; };
 		C8E044262530BC460062C7C1 /* PopularPhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E044252530BC460062C7C1 /* PopularPhotoService.swift */; };
 		C8E044292530CD400062C7C1 /* PopularPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E044282530CD400062C7C1 /* PopularPhotoResponse.swift */; };
 		C8E044302530D0640062C7C1 /* Photoo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0442F2530D0640062C7C1 /* Photoo.swift */; };
@@ -42,6 +44,8 @@
 		C8636B43252F9AFC006372E0 /* PopularPhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularPhotoTableViewCell.xib; sourceTree = "<group>"; };
 		C8636B46252FA5B1006372E0 /* LoadMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreTableViewCell.swift; sourceTree = "<group>"; };
 		C8636B47252FA5B1006372E0 /* LoadMoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreTableViewCell.xib; sourceTree = "<group>"; };
+		C8A9707C2531E02B00585D67 /* InsertionPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionPhotoTableViewCell.swift; sourceTree = "<group>"; };
+		C8A9707D2531E02B00585D67 /* InsertionPhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsertionPhotoTableViewCell.xib; sourceTree = "<group>"; };
 		C8E044252530BC460062C7C1 /* PopularPhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotoService.swift; sourceTree = "<group>"; };
 		C8E044282530CD400062C7C1 /* PopularPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPhotoResponse.swift; sourceTree = "<group>"; };
 		C8E0442F2530D0640062C7C1 /* Photoo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photoo.swift; sourceTree = "<group>"; };
@@ -103,22 +107,72 @@
 				C8E0443D2530E2A50062C7C1 /* R.generated.swift */,
 				C8636B2D252F993D006372E0 /* AppDelegate.swift */,
 				C8636B2F252F993D006372E0 /* SceneDelegate.swift */,
-				C8636B31252F993D006372E0 /* PopularPhotoViewController.swift */,
-				C8636B33252F993D006372E0 /* Main.storyboard */,
 				C8636B36252F993E006372E0 /* Assets.xcassets */,
 				C8636B38252F993E006372E0 /* LaunchScreen.storyboard */,
 				C8636B3B252F993E006372E0 /* Info.plist */,
-				C8636B42252F9AFC006372E0 /* PopularPhotoTableViewCell.swift */,
-				C8636B43252F9AFC006372E0 /* PopularPhotoTableViewCell.xib */,
-				C8636B46252FA5B1006372E0 /* LoadMoreTableViewCell.swift */,
-				C8636B47252FA5B1006372E0 /* LoadMoreTableViewCell.xib */,
-				C8E044252530BC460062C7C1 /* PopularPhotoService.swift */,
-				C8E044282530CD400062C7C1 /* PopularPhotoResponse.swift */,
-				C8E0442F2530D0640062C7C1 /* Photoo.swift */,
-				C8E044332530D3E60062C7C1 /* PopularPhotoViewModel.swift */,
-				C8E044442530EAA70062C7C1 /* PhotoViewModel.swift */,
+				C8A970872531FA3700585D67 /* InsertionPhoto */,
+				C8A970842531F76500585D67 /* LoadMoreTableViewCell */,
+				C8A970812531F73C00585D67 /* Service */,
+				C8A970862531F7D400585D67 /* Post */,
+				C8A970882531FA4C00585D67 /* Timeline */,
 			);
 			path = WongnaiIntern;
+			sourceTree = "<group>";
+		};
+		C8A970812531F73C00585D67 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C8E044252530BC460062C7C1 /* PopularPhotoService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C8A970842531F76500585D67 /* LoadMoreTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C8636B46252FA5B1006372E0 /* LoadMoreTableViewCell.swift */,
+				C8636B47252FA5B1006372E0 /* LoadMoreTableViewCell.xib */,
+			);
+			path = LoadMoreTableViewCell;
+			sourceTree = "<group>";
+		};
+		C8A970852531F7B200585D67 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C8E044282530CD400062C7C1 /* PopularPhotoResponse.swift */,
+				C8E0442F2530D0640062C7C1 /* Photoo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C8A970862531F7D400585D67 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				C8636B42252F9AFC006372E0 /* PopularPhotoTableViewCell.swift */,
+				C8636B43252F9AFC006372E0 /* PopularPhotoTableViewCell.xib */,
+				C8E044442530EAA70062C7C1 /* PhotoViewModel.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		C8A970872531FA3700585D67 /* InsertionPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				C8A9707C2531E02B00585D67 /* InsertionPhotoTableViewCell.swift */,
+				C8A9707D2531E02B00585D67 /* InsertionPhotoTableViewCell.xib */,
+			);
+			path = InsertionPhoto;
+			sourceTree = "<group>";
+		};
+		C8A970882531FA4C00585D67 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				C8A970852531F7B200585D67 /* Model */,
+				C8636B31252F993D006372E0 /* PopularPhotoViewController.swift */,
+				C8636B33252F993D006372E0 /* Main.storyboard */,
+				C8E044332530D3E60062C7C1 /* PopularPhotoViewModel.swift */,
+			);
+			path = Timeline;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +238,7 @@
 			files = (
 				C8636B3A252F993E006372E0 /* LaunchScreen.storyboard in Resources */,
 				C8636B45252F9AFC006372E0 /* PopularPhotoTableViewCell.xib in Resources */,
+				C8A9707F2531E02B00585D67 /* InsertionPhotoTableViewCell.xib in Resources */,
 				C8636B37252F993E006372E0 /* Assets.xcassets in Resources */,
 				C8636B49252FA5B1006372E0 /* LoadMoreTableViewCell.xib in Resources */,
 				C8636B35252F993D006372E0 /* Main.storyboard in Resources */,
@@ -267,6 +322,7 @@
 				C8636B2E252F993D006372E0 /* AppDelegate.swift in Sources */,
 				C8E044262530BC460062C7C1 /* PopularPhotoService.swift in Sources */,
 				C8E044292530CD400062C7C1 /* PopularPhotoResponse.swift in Sources */,
+				C8A9707E2531E02B00585D67 /* InsertionPhotoTableViewCell.swift in Sources */,
 				C8E0443E2530E2A50062C7C1 /* R.generated.swift in Sources */,
 				C8636B30252F993D006372E0 /* SceneDelegate.swift in Sources */,
 				C8636B48252FA5B1006372E0 /* LoadMoreTableViewCell.swift in Sources */,
