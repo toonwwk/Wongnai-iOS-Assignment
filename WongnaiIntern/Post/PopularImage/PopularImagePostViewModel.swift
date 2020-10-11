@@ -9,6 +9,7 @@
 import Foundation
 
 class PopularImagePostViewModel {
+    
     let name: String
     let description: String
     let likeNumber: Int
@@ -30,4 +31,5 @@ class PopularImagePostViewModel {
         self.likeNumber = likeNumber
         self.imageUrlString = imageUrlString
     }
+    
 }

@@ -18,6 +18,8 @@ class ImageInsertionPostTableViewCell: UITableViewCell {
     }
     
     func commonInit() {
+        contentView.backgroundColor = .white
+        imageInsertionImageView.contentMode = .scaleAspectFill
         imageInsertionImageView.image = R.image.postImageInsertion()
     }
     

@@ -14,9 +14,16 @@ class LoadMoreTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        commonInit()
+    }
+    
+    func commonInit() {
+        contentView.backgroundColor = .white
+        activityIndicatorView.color = .black
     }
     
     func configureCell() {
         activityIndicatorView.startAnimating()
     }
+    
 }

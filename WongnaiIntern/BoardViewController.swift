@@ -22,6 +22,7 @@ class BoardViewController: UIViewController {
     }
     
     func configureViewController() {
+        contentTableView.backgroundColor = .white
         contentTableView.register(R.nib.popularImagePostTableViewCell)
         contentTableView.register(R.nib.imageInsertionPostTableViewCell)
         contentTableView.register(R.nib.loadMoreTableViewCell)

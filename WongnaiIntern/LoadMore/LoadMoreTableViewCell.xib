@@ -27,6 +27,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="zAM-hk-hWW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3KY-K2-yjY"/>
+                    <constraint firstAttribute="bottom" secondItem="zAM-hk-hWW" secondAttribute="bottom" constant="12" id="AQN-n9-gP1"/>
+                    <constraint firstItem="zAM-hk-hWW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="ccs-fT-kcp"/>
                     <constraint firstItem="zAM-hk-hWW" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="dur-Ps-VBd"/>
                 </constraints>
             </tableViewCellContentView>

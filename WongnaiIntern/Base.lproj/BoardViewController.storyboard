@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--POPULAR IMAGE BOARD-->
+        <!--Popular Image Board-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="BoardViewController" customModule="WongnaiIntern" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,7 +27,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gN5-4i-MwA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tc7-8f-VCT"/>
                             <constraint firstItem="gN5-4i-MwA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="uXI-yO-5D4"/>
@@ -35,7 +35,7 @@
                             <constraint firstAttribute="bottom" secondItem="gN5-4i-MwA" secondAttribute="bottom" id="xX2-uy-lcl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="POPULAR IMAGE BOARD" id="AbC-3a-0Fg"/>
+                    <navigationItem key="navigationItem" title="Popular Image Board" id="AbC-3a-0Fg"/>
                     <connections>
                         <outlet property="contentTableView" destination="gN5-4i-MwA" id="GAg-7T-5Y0"/>
                     </connections>

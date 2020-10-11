@@ -34,10 +34,9 @@ class BoardViewModel {
     }
     
     func fetchImage() {
-        popularImageService.fetchData(currentPage: currentPage) { (response) in
-            guard let image = response.photos else { return }
-            self.popularImage += image
-            self.canLoadMorePhoto = (response.totalPages ?? 0) != self.currentPage
+        popularImageService.fetchData(currentPage: currentPage) { (data) in
+            self.popularImage += data.photos ?? []
+            self.canLoadMorePhoto = (data.totalPages ?? 0) != self.currentPage
             self.currentPage += 1
             self.statusType = .success
             self.updateHandler?()
@@ -48,6 +47,7 @@ class BoardViewModel {
     }
     
     func loadMoreImage() {
+        statusType = .loading
         fetchImage()
     }
     
