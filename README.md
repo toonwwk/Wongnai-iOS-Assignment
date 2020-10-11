@@ -1,5 +1,5 @@
 # Wongnai iOS Assignment
-- [Project Repository](https://github.com/toonwwk/Wongnai-iOS-Assignment)
+- https://github.com/toonwwk/Wongnai-iOS-Assignment
 - use 3rd Libraries; Kingfisher, Alamofire, and R.swift 
 - use Cocoapods
 - pull to refresh
