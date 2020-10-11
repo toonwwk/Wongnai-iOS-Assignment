@@ -18,7 +18,7 @@ class ImageInsertionPostTableViewCell: UITableViewCell {
     }
     
     func commonInit() {
-        imageInsertionImageView.image = R.image.imageInsertion()
+        imageInsertionImageView.image = R.image.postImageInsertion()
     }
     
 }

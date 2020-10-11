@@ -31,7 +31,7 @@ class PopularImagePostTableViewCell: UITableViewCell {
         descriptionLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         likeNumberLabel.textColor = UIColor(red: 0.592, green: 0.592, blue: 0.592, alpha: 1)
         likeNumberLabel.font = UIFont.systemFont(ofSize: 10, weight: .regular)
-        likeIconImageView.image = R.image.likeIcon()
+        likeIconImageView.image = R.image.postLikeIcon()
         detailView.backgroundColor = .white
         separatorView.backgroundColor = UIColor(red: 0.933, green: 0.933, blue: 0.933, alpha: 1)
     }

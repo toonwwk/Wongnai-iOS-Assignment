@@ -9,7 +9,7 @@
 import Foundation
 
 enum BoardContentSectionType: Int, CaseIterable {
-    case Post, LoadMore
+    case ImagePost, LoadMore
 }
 
 enum ServiceStatusType {
@@ -26,7 +26,7 @@ class BoardViewModel {
     var updateHandler: (() -> ())?
     
     var numberOfInsertionPhoto: Int {
-        return Int(floor(Double(popularImage.count / 4)))
+        return Int(popularImage.count / 4)
     }
 
     init() {
@@ -66,7 +66,7 @@ class BoardViewModel {
     
     func numberOfRowsInSection(_ section: Int) -> Int {
         switch sectionType(at: IndexPath(row: 0, section: section)) {
-        case .Post:
+        case .ImagePost:
             return statusType == .success ? (popularImage.count + numberOfInsertionPhoto) : 0
         case .LoadMore:
             return statusType == .success ? (canLoadMorePhoto ? 1 : 0) : 0
@@ -79,8 +79,8 @@ class BoardViewModel {
     
     func dataForRow(at indexPath: IndexPath) -> Any? {
         switch sectionType(at: indexPath) {
-        case .Post:
-            if (isImageInsertionPost(indexPath)) { return nil }
+        case .ImagePost:
+            if (isImageInsertionPost(at: indexPath)) { return nil }
             
             let photo = popularImage[indexWithoutImageInsertion(at: indexPath)]
             let name = photo.name ?? ""
@@ -93,12 +93,12 @@ class BoardViewModel {
         }
     }
     
-    func isImageInsertionPost(_ indexPath: IndexPath) -> Bool {
+    func isImageInsertionPost(at indexPath: IndexPath) -> Bool {
         return (indexPath.row + 1) % 5 == 0
     }
     
-    func indexWithoutImageInsertion(at indexPath: IndexPath) -> Int{
-        return indexPath.row - (Int(floor(Double(indexPath.row / 5))))
+    func indexWithoutImageInsertion(at indexPath: IndexPath) -> Int {
+        return indexPath.row - (Int(indexPath.row / 5))
     }
     
 }

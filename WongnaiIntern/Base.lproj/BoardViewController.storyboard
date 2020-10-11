@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--WONGNAI-->
+        <!--POPULAR IMAGE BOARD-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="BoardViewController" customModule="WongnaiIntern" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                             <constraint firstAttribute="bottom" secondItem="gN5-4i-MwA" secondAttribute="bottom" id="xX2-uy-lcl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="WONGNAI" id="AbC-3a-0Fg"/>
+                    <navigationItem key="navigationItem" title="POPULAR IMAGE BOARD" id="AbC-3a-0Fg"/>
                     <connections>
                         <outlet property="contentTableView" destination="gN5-4i-MwA" id="GAg-7T-5Y0"/>
                     </connections>

@@ -58,7 +58,7 @@ extension BoardViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch viewModel.sectionType(at: indexPath) {
-        case .Post:
+        case .ImagePost:
             if let viewModel = viewModel.dataForRow(at: indexPath) as? PopularImagePostViewModel {
                 let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.popularImagePostTableViewCell, for: indexPath)!
                 cell.configureCell(with: viewModel)

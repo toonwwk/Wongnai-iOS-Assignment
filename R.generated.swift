@@ -140,24 +140,33 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
-    /// Image `image-insertion`.
-    static let imageInsertion = Rswift.ImageResource(bundle: R.hostingBundle, name: "image-insertion")
-    /// Image `like-icon`.
-    static let likeIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "like-icon")
+    /// Image `post-image-insertion`.
+    static let postImageInsertion = Rswift.ImageResource(bundle: R.hostingBundle, name: "post-image-insertion")
+    /// Image `post-like-icon`.
+    static let postLikeIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "post-like-icon")
+    /// Image `wongnai-logo`.
+    static let wongnaiLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "wongnai-logo")
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "image-insertion", bundle: ..., traitCollection: ...)`
-    static func imageInsertion(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.imageInsertion, compatibleWith: traitCollection)
+    /// `UIImage(named: "post-image-insertion", bundle: ..., traitCollection: ...)`
+    static func postImageInsertion(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.postImageInsertion, compatibleWith: traitCollection)
     }
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "like-icon", bundle: ..., traitCollection: ...)`
-    static func likeIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.likeIcon, compatibleWith: traitCollection)
+    /// `UIImage(named: "post-like-icon", bundle: ..., traitCollection: ...)`
+    static func postLikeIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.postLikeIcon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "wongnai-logo", bundle: ..., traitCollection: ...)`
+    static func wongnaiLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.wongnaiLogo, compatibleWith: traitCollection)
     }
     #endif
 
@@ -358,6 +367,7 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "wongnai-logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wongnai-logo' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
